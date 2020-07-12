@@ -14,8 +14,8 @@ What things you need to install the software and how to install them
 Python
 
 Python Packages:
-  selenium
-  BeautifulSoup4
+  - selenium
+  - BeautifulSoup4
 
 ### Installing
 
