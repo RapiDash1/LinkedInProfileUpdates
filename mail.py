@@ -29,17 +29,19 @@ class Email():
     def receiverEmail(self): return self._receiverEmail
 
 
-    def message(self):
+    def message(self, info):
         return """
-            Hello human being,
+        LinkedIn update.
 
-            Test mail.
-        """
+        Post views: {0}
 
-    def send(self):
+        Bye
+        """.format(info)
+
+    def send(self, messageInfo):
         print("Sending mail\n")
         server = smtplib.SMTP_SSL(self.smtpServer(), self.port())
         server.login(self.senderEmail(), self.senderPassword())
-        server.sendmail(self.senderEmail(), self.receiverEmail(), self.message())
+        server.sendmail(self.senderEmail(), self.receiverEmail(), self.message(messageInfo))
         server.quit()
 
